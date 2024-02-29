@@ -33,3 +33,16 @@ public class DataSourceConfig {
         return new HikariDataSource(config);
     }
 }
+/*
+@EnableAutoConfiguration
+@Configuration
+@ConfigurationProperties("spring.datasource")
+public class DataSourceConfig extends HikariConfig {
+    @Bean
+    public DataSource hikariDataSource() {
+        //HikariConfig config = new HikariConfig("/hikaricp.properties");
+        System.out.println(this);
+        return new HikariDataSource(this);
+    }
+}
+*/
