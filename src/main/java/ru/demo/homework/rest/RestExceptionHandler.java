@@ -12,7 +12,7 @@ import ru.demo.homework.exception.ItemNotExistsException;
 
 @Slf4j
 @RequiredArgsConstructor
-@RestControllerAdvice(assignableTypes = {ProductController.class})
+@RestControllerAdvice
 public class RestExceptionHandler {
 
     private static final String ERROR_TITLE = "Обнаружена ошибка: {}";

@@ -59,7 +59,7 @@ public class ProductDaoImpl implements ProductDao {
         return new ProductEntity()
                 .setId(rs.getLong(ID_FIELD))
                 .setAccount(rs.getString(ACCOUNT_FIELD))
-                .setBalance(rs.getFloat(BALANCE_FIELD))
+                .setBalance(rs.getBigDecimal(BALANCE_FIELD))
                 .setType(rs.getInt(TYPE_FIELD))
                 .setUserId(rs.getLong(USER_ID_FIELD));
     }

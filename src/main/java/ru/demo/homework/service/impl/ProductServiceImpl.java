@@ -30,7 +30,7 @@ public class ProductServiceImpl implements ProductService {
                     .map(this::mapToProduct)
                     .orElseThrow(() -> new ItemNotExistsException("Не найден продукт с идентификатором " + id));
         } catch (SQLException e) {
-            log.error("При выполнении запроса Обнаружена ошибка: {}", e.getMessage());
+            log.error("При выполнении запроса обнаружена ошибка: {}", e.getMessage());
             throw new DatabaseCommonException("Получение продукта с идентификатором " + id + " завершилось ошибкой");
         }
     }
@@ -41,10 +41,9 @@ public class ProductServiceImpl implements ProductService {
             return new Products().setItems(
                     productDao.getByUserId(userId).stream()
                             .map(this::mapToProduct)
-                            .toList()
-            );
+                            .toList());
         } catch (SQLException e) {
-            log.error("При выполнении запроса Обнаружена ошибка: {}", e.getMessage());
+            log.error("При выполнении запроса обнаружена ошибка: {}", e.getMessage());
             throw new DatabaseCommonException("Получение продуктов по идентификатору пользователя завершилось ошибкой");
         }
     }
